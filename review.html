@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<title>分類の答え合わせ（ボートレース堅さ・荒れ度）</title>
+<style>
+body { font-family: sans-serif; margin: 2em; color: #222; }
+table { border-collapse: collapse; margin-bottom: 1.5em; }
+td, th { border: 1px solid #ccc; padding: 3px 8px; font-size: 14px; }
+.note { color: #666; font-size: 13px; max-width: 60em; }
+.nav { font-size: 13px; color: #666; margin: 0 0 1em; }
+.nav a { color: #2563a8; }
+</style></head><body>
+<nav class="nav"><a href="index.html">確率DB</a> | <a href="daily.html">日次分類</a> | <a href="review.html">答え合わせ</a></nav>
+<h1>分類の答え合わせ（予測と実際の決着バンド）</h1>
+<p class="note">日次パイプラインが出した A〜E 予測分布と、実際の3連単払戻から
+決まる実績バンドを突き合わせた自己評価です。対象 2 日・
+突合 316 レース。累積 Brier スコア 0.786、log loss 1.567。
+確率の較正（予測確率と実績率の一致度）を見るための記録であり、
+的中や利益を保証・示唆するものではありません。</p>
+<h2>予測A確率の較正（累積）</h2>
+<table><tr><th>予測A確率ビン</th><th>n</th><th>平均予測A確率</th><th>実績A率</th></tr>
+<tr><td>>=40%</td><td>18</td><td>45.6%</td><td>38.9%</td></tr><tr><td>30-40%</td><td>52</td><td>34.6%</td><td>40.4%</td></tr><tr><td>20-30%</td><td>73</td><td>25.7%</td><td>21.9%</td></tr><tr><td><20%</td><td>173</td><td>10.9%</td><td>11.6%</td></tr></table>
+<h2>予測クラス=A のレースの実績バンド分布（累積）</h2>
+<p>予測A 126 件中: A 41件（32.5%） ・ B 25件（19.8%） ・ C 25件（19.8%） ・ D 16件（12.7%） ・ E 19件（15.1%）</p>
+<h2>平均予測分布 vs 実績分布（累積）</h2>
+<table><tr><th>バンド</th><th>平均予測</th><th>実績</th></tr>
+<tr><td>A</td><td>20.2%</td><td>20.3%</td></tr><tr><td>B</td><td>19.8%</td><td>21.8%</td></tr><tr><td>C</td><td>20.2%</td><td>20.3%</td></tr><tr><td>D</td><td>20.0%</td><td>18.4%</td></tr><tr><td>E</td><td>19.9%</td><td>19.3%</td></tr></table>
+<h2>日別推移</h2>
+<table><tr><th>日付</th><th>突合/予測</th><th>Brier</th><th>log loss</th>
+<th>予測A 件数</th><th>予測Aの実績A率</th><th>結果の取得元</th></tr>
+<tr><td>2026-11-01</td><td>167/168</td><td>0.789</td><td>1.580</td><td>69</td><td>30.4%</td><td>mirror (BoatraceCSV payouts)</td></tr><tr><td>2026-11-02</td><td>149/156</td><td>0.783</td><td>1.551</td><td>57</td><td>35.1%</td><td>mirror (BoatraceCSV payouts)</td></tr></table>
+</body></html>
