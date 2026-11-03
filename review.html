@@ -12,20 +12,21 @@ td, th { border: 1px solid #ccc; padding: 3px 8px; font-size: 14px; }
 <nav class="nav"><a href="index.html">確率DB</a> | <a href="daily.html">日次分類</a> | <a href="review.html">答え合わせ</a></nav>
 <h1>分類の答え合わせ（予測と実際の決着バンド）</h1>
 <p class="note">日次パイプラインが出した A〜E 予測分布と、実際の3連単払戻から
-決まる実績バンドを突き合わせた自己評価です。対象 2 日・
-突合 316 レース。累積 Brier スコア 0.786、log loss 1.567。
+決まる実績バンドを突き合わせた自己評価です。対象 3 日・
+突合 446 レース（現行モデル featuresA-2026（旧モデル） の分のみ累積）。
+累積 Brier スコア 0.782、log loss 1.557。
 確率の較正（予測確率と実績率の一致度）を見るための記録であり、
 的中や利益を保証・示唆するものではありません。</p>
 <h2>予測A確率の較正（累積）</h2>
 <table><tr><th>予測A確率ビン</th><th>n</th><th>平均予測A確率</th><th>実績A率</th></tr>
-<tr><td>>=40%</td><td>18</td><td>45.6%</td><td>38.9%</td></tr><tr><td>30-40%</td><td>52</td><td>34.6%</td><td>40.4%</td></tr><tr><td>20-30%</td><td>73</td><td>25.7%</td><td>21.9%</td></tr><tr><td><20%</td><td>173</td><td>10.9%</td><td>11.6%</td></tr></table>
+<tr><td>>=40%</td><td>23</td><td>45.9%</td><td>43.5%</td></tr><tr><td>30-40%</td><td>74</td><td>34.8%</td><td>40.5%</td></tr><tr><td>20-30%</td><td>110</td><td>25.6%</td><td>22.7%</td></tr><tr><td><20%</td><td>239</td><td>10.8%</td><td>12.1%</td></tr></table>
 <h2>予測クラス=A のレースの実績バンド分布（累積）</h2>
-<p>予測A 126 件中: A 41件（32.5%） ・ B 25件（19.8%） ・ C 25件（19.8%） ・ D 16件（12.7%） ・ E 19件（15.1%）</p>
+<p>予測A 180 件中: A 59件（32.8%） ・ B 36件（20.0%） ・ C 34件（18.9%） ・ D 23件（12.8%） ・ E 28件（15.6%）</p>
 <h2>平均予測分布 vs 実績分布（累積）</h2>
 <table><tr><th>バンド</th><th>平均予測</th><th>実績</th></tr>
-<tr><td>A</td><td>20.2%</td><td>20.3%</td></tr><tr><td>B</td><td>19.8%</td><td>21.8%</td></tr><tr><td>C</td><td>20.2%</td><td>20.3%</td></tr><tr><td>D</td><td>20.0%</td><td>18.4%</td></tr><tr><td>E</td><td>19.9%</td><td>19.3%</td></tr></table>
+<tr><td>A</td><td>20.2%</td><td>21.1%</td></tr><tr><td>B</td><td>19.7%</td><td>20.9%</td></tr><tr><td>C</td><td>20.1%</td><td>19.5%</td></tr><tr><td>D</td><td>20.2%</td><td>17.5%</td></tr><tr><td>E</td><td>19.8%</td><td>21.1%</td></tr></table>
 <h2>日別推移</h2>
 <table><tr><th>日付</th><th>突合/予測</th><th>Brier</th><th>log loss</th>
-<th>予測A 件数</th><th>予測Aの実績A率</th><th>結果の取得元</th></tr>
-<tr><td>2026-11-01</td><td>167/168</td><td>0.789</td><td>1.580</td><td>69</td><td>30.4%</td><td>mirror (BoatraceCSV payouts)</td></tr><tr><td>2026-11-02</td><td>149/156</td><td>0.783</td><td>1.551</td><td>57</td><td>35.1%</td><td>mirror (BoatraceCSV payouts)</td></tr></table>
+<th>予測A 件数</th><th>予測Aの実績A率</th><th>結果の取得元</th><th>モデル</th></tr>
+<tr><td>2026-11-01</td><td>167/168</td><td>0.789</td><td>1.580</td><td>69</td><td>30.4%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-02</td><td>149/156</td><td>0.783</td><td>1.551</td><td>57</td><td>35.1%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-03</td><td>130/132</td><td>0.772</td><td>1.533</td><td>54</td><td>33.3%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr></table>
 </body></html>
