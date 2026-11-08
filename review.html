@@ -12,21 +12,21 @@ td, th { border: 1px solid #ccc; padding: 3px 8px; font-size: 14px; }
 <nav class="nav"><a href="index.html">確率DB</a> | <a href="daily.html">日次分類</a> | <a href="review.html">答え合わせ</a> | <a href="sheets.html">傾向シート</a></nav>
 <h1>分類の答え合わせ（予測と実際の決着バンド）</h1>
 <p class="note">日次パイプラインが出した A〜E 予測分布と、実際の3連単払戻から
-決まる実績バンドを突き合わせた自己評価です。対象 4 日・
-突合 547 レース（現行モデル hist5y-v1 の分のみ累積）。
-累積 Brier スコア 0.766、log loss 1.518。
+決まる実績バンドを突き合わせた自己評価です。対象 5 日・
+突合 647 レース（現行モデル hist5y-v1 の分のみ累積）。
+累積 Brier スコア 0.770、log loss 1.530。
 確率の較正（予測確率と実績率の一致度）を見るための記録であり、
 的中や利益を保証・示唆するものではありません。旧モデル分の 3 日・446 レースはモデル切替前の記録として日別推移にのみ残し、累積の較正には含めていません。</p>
 <h2>予測A確率の較正（累積）</h2>
 <table><tr><th>予測A確率ビン</th><th>n</th><th>平均予測A確率</th><th>実績A率</th></tr>
-<tr><td>>=40%</td><td>40</td><td>45.8%</td><td>47.5%</td></tr><tr><td>30-40%</td><td>67</td><td>34.8%</td><td>35.8%</td></tr><tr><td>20-30%</td><td>104</td><td>24.4%</td><td>21.2%</td></tr><tr><td><20%</td><td>336</td><td>10.1%</td><td>8.6%</td></tr></table>
+<tr><td>>=40%</td><td>49</td><td>45.6%</td><td>46.9%</td></tr><tr><td>30-40%</td><td>75</td><td>34.8%</td><td>36.0%</td></tr><tr><td>20-30%</td><td>123</td><td>24.6%</td><td>23.6%</td></tr><tr><td><20%</td><td>400</td><td>10.0%</td><td>9.8%</td></tr></table>
 <h2>予測クラス=A のレースの実績バンド分布（累積）</h2>
-<p>予測A 173 件中: A 61件（35.3%） ・ B 40件（23.1%） ・ C 31件（17.9%） ・ D 22件（12.7%） ・ E 19件（11.0%）</p>
+<p>予測A 202 件中: A 71件（35.1%） ・ B 50件（24.8%） ・ C 34件（16.8%） ・ D 24件（11.9%） ・ E 23件（11.4%）</p>
 <h2>平均予測分布 vs 実績分布（累積）</h2>
 <table><tr><th>バンド</th><th>平均予測</th><th>実績</th></tr>
-<tr><td>A</td><td>18.4%</td><td>17.2%</td></tr><tr><td>B</td><td>20.3%</td><td>21.0%</td></tr><tr><td>C</td><td>20.6%</td><td>24.5%</td></tr><tr><td>D</td><td>20.4%</td><td>21.4%</td></tr><tr><td>E</td><td>20.2%</td><td>15.9%</td></tr></table>
+<tr><td>A</td><td>18.3%</td><td>18.2%</td></tr><tr><td>B</td><td>20.3%</td><td>21.3%</td></tr><tr><td>C</td><td>20.6%</td><td>23.5%</td></tr><tr><td>D</td><td>20.5%</td><td>20.9%</td></tr><tr><td>E</td><td>20.3%</td><td>16.1%</td></tr></table>
 <h2>日別推移</h2>
 <table><tr><th>日付</th><th>突合/予測</th><th>Brier</th><th>log loss</th>
 <th>予測A 件数</th><th>予測Aの実績A率</th><th>結果の取得元</th><th>モデル</th></tr>
-<tr><td>2026-11-01</td><td>167/168</td><td>0.789</td><td>1.580</td><td>69</td><td>30.4%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-02</td><td>149/156</td><td>0.783</td><td>1.551</td><td>57</td><td>35.1%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-03</td><td>130/132</td><td>0.772</td><td>1.533</td><td>54</td><td>33.3%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-04</td><td>137/144</td><td>0.786</td><td>1.558</td><td>51</td><td>21.6%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-05</td><td>142/144</td><td>0.752</td><td>1.490</td><td>51</td><td>41.2%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-06</td><td>141/156</td><td>0.758</td><td>1.500</td><td>46</td><td>39.1%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-07</td><td>127/132</td><td>0.770</td><td>1.528</td><td>25</td><td>44.0%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr></table>
+<tr><td>2026-11-01</td><td>167/168</td><td>0.789</td><td>1.580</td><td>69</td><td>30.4%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-02</td><td>149/156</td><td>0.783</td><td>1.551</td><td>57</td><td>35.1%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-03</td><td>130/132</td><td>0.772</td><td>1.533</td><td>54</td><td>33.3%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-04</td><td>137/144</td><td>0.786</td><td>1.558</td><td>51</td><td>21.6%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-05</td><td>142/144</td><td>0.752</td><td>1.490</td><td>51</td><td>41.2%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-06</td><td>141/156</td><td>0.758</td><td>1.500</td><td>46</td><td>39.1%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-07</td><td>127/132</td><td>0.770</td><td>1.528</td><td>25</td><td>44.0%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-08</td><td>100/100</td><td>0.791</td><td>1.596</td><td>29</td><td>34.5%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr></table>
 </body></html>
