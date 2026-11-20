@@ -2,15 +2,34 @@
 <html lang="ja"><head><meta charset="utf-8">
 <title>分類の答え合わせ（ボートレース堅さ・荒れ度）</title>
 <style>
-body { font-family: sans-serif; margin: 2em; color: #222; }
-table { border-collapse: collapse; margin-bottom: 1.5em; }
-td, th { border: 1px solid #ccc; padding: 3px 8px; font-size: 14px; }
-.note { color: #666; font-size: 13px; max-width: 60em; }
-.nav { font-size: 13px; color: #666; margin: 0 0 1em; }
-.nav a { color: #2563a8; }
+:root{--navy:#0a203d;--ink:#1c2733;--mut:#5b6b7c;--line:#dde5ee;--bg:#f4f7fb;--card:#fff;--tint:#eaf0f8}
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;margin:0;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-text-size-adjust:100%}
+.nav{background:var(--navy);color:#cfe0f2;padding:11px 16px;font-size:13px;display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline}
+.nav .brand{color:#fff;font-weight:700;font-size:14px;letter-spacing:.02em}
+.nav a{color:#cfe0f2;text-decoration:none}
+.nav a:hover{color:#fff;text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:6px 16px 56px}
+h1{font-size:22px;color:var(--navy);margin:20px 0 10px;line-height:1.35}
+h2{font-size:17px;color:var(--navy);margin:30px 0 10px;padding-left:9px;border-left:4px solid var(--navy)}
+.note{background:var(--tint);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:#40536a;font-size:13px;line-height:1.75}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px;background:var(--card);margin-bottom:1.6em}
+table{border-collapse:collapse;width:100%}
+th{background:var(--tint);color:var(--navy);font-size:12.5px;font-weight:700;text-align:left;padding:8px 10px;white-space:nowrap}
+td{padding:7px 10px;font-size:14px;border-top:1px solid var(--line);vertical-align:middle}
+tr:hover td{background:#f7fafd}
+.ptxt{font-size:12px;color:#40536a;white-space:nowrap;font-variant-numeric:tabular-nums}
+.badge{border-radius:999px;padding:1px 8px;font-size:12px;color:#fff;font-weight:600;white-space:nowrap}
+.badge.firm{background:#3aa655}.badge.rough{background:#e05252}
+.badge.wl{background:#7b5cd6}
+.dbinfo{font-size:12px;color:var(--mut);margin-top:2px;line-height:1.6}
+details{font-size:12px;color:var(--mut);margin-top:2px}
+summary{cursor:pointer;color:var(--navy)}
+a{color:#2563a8}
+@media (max-width:640px){h1{font-size:19px}h2{font-size:16px}td{padding:6px 7px;font-size:13px}th{padding:7px;font-size:12px}.ptxt{font-size:11px}.wrap{padding:4px 10px 44px}}
 </style></head><body>
-<nav class="nav"><a href="index.html">確率DB</a> | <a href="daily.html">日次分類</a> | <a href="review.html">答え合わせ</a> | <a href="sheets.html">傾向シート</a></nav>
-<h1>分類の答え合わせ（予測と実際の決着バンド）</h1>
+<nav class="nav"><span class="brand">ボートレース確率データベース</span><span class="links"><a href="index.html">確率DB</a> | <a href="daily.html">日次分類</a> | <a href="review.html">答え合わせ</a> | <a href="sheets.html">傾向シート</a></span></nav>
+<div class="wrap"><h1>分類の答え合わせ（予測と実際の決着バンド）</h1>
 <p class="note">日次パイプラインが出した A〜E 予測分布と、実際の3連単払戻から
 決まる実績バンドを突き合わせた自己評価です。対象 16 日・
 突合 2070 レース（現行モデル hist5y-v1 の分のみ累積）。
@@ -18,15 +37,15 @@ td, th { border: 1px solid #ccc; padding: 3px 8px; font-size: 14px; }
 確率の較正（予測確率と実績率の一致度）を見るための記録であり、
 的中や利益を保証・示唆するものではありません。旧モデル分の 3 日・446 レースはモデル切替前の記録として日別推移にのみ残し、累積の較正には含めていません。</p>
 <h2>予測A確率の較正（累積）</h2>
-<table><tr><th>予測A確率ビン</th><th>n</th><th>平均予測A確率</th><th>実績A率</th></tr>
-<tr><td>>=40%</td><td>136</td><td>45.4%</td><td>41.9%</td></tr><tr><td>30-40%</td><td>264</td><td>34.6%</td><td>35.2%</td></tr><tr><td>20-30%</td><td>391</td><td>24.8%</td><td>24.0%</td></tr><tr><td><20%</td><td>1279</td><td>9.9%</td><td>9.9%</td></tr></table>
+<div class="tbl"><table><tr><th>予測A確率ビン</th><th>n</th><th>平均予測A確率</th><th>実績A率</th></tr>
+<tr><td>>=40%</td><td>136</td><td>45.4%</td><td>41.9%</td></tr><tr><td>30-40%</td><td>264</td><td>34.6%</td><td>35.2%</td></tr><tr><td>20-30%</td><td>391</td><td>24.8%</td><td>24.0%</td></tr><tr><td><20%</td><td>1279</td><td>9.9%</td><td>9.9%</td></tr></table></div>
 <h2>予測クラス=A のレースの実績バンド分布（累積）</h2>
 <p>予測A 670 件中: A 221件（33.0%） ・ B 145件（21.6%） ・ C 116件（17.3%） ・ D 90件（13.4%） ・ E 98件（14.6%）</p>
 <h2>平均予測分布 vs 実績分布（累積）</h2>
-<table><tr><th>バンド</th><th>平均予測</th><th>実績</th></tr>
-<tr><td>A</td><td>18.2%</td><td>17.9%</td></tr><tr><td>B</td><td>20.2%</td><td>20.5%</td></tr><tr><td>C</td><td>20.8%</td><td>22.3%</td></tr><tr><td>D</td><td>20.5%</td><td>19.5%</td></tr><tr><td>E</td><td>20.4%</td><td>19.8%</td></tr></table>
+<div class="tbl"><table><tr><th>バンド</th><th>平均予測</th><th>実績</th></tr>
+<tr><td>A</td><td>18.2%</td><td>17.9%</td></tr><tr><td>B</td><td>20.2%</td><td>20.5%</td></tr><tr><td>C</td><td>20.8%</td><td>22.3%</td></tr><tr><td>D</td><td>20.5%</td><td>19.5%</td></tr><tr><td>E</td><td>20.4%</td><td>19.8%</td></tr></table></div>
 <h2>日別推移</h2>
-<table><tr><th>日付</th><th>突合/予測</th><th>Brier</th><th>log loss</th>
+<div class="tbl"><table><tr><th>日付</th><th>突合/予測</th><th>Brier</th><th>log loss</th>
 <th>予測A 件数</th><th>予測Aの実績A率</th><th>結果の取得元</th><th>モデル</th></tr>
-<tr><td>2026-11-01</td><td>167/168</td><td>0.789</td><td>1.580</td><td>69</td><td>30.4%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-02</td><td>149/156</td><td>0.783</td><td>1.551</td><td>57</td><td>35.1%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-03</td><td>130/132</td><td>0.772</td><td>1.533</td><td>54</td><td>33.3%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-04</td><td>137/144</td><td>0.786</td><td>1.558</td><td>51</td><td>21.6%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-05</td><td>142/144</td><td>0.752</td><td>1.490</td><td>51</td><td>41.2%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-06</td><td>141/156</td><td>0.758</td><td>1.500</td><td>46</td><td>39.1%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-07</td><td>127/132</td><td>0.770</td><td>1.528</td><td>25</td><td>44.0%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-08</td><td>100/100</td><td>0.791</td><td>1.596</td><td>29</td><td>34.5%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-09</td><td>129/132</td><td>0.786</td><td>1.574</td><td>48</td><td>33.3%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-10</td><td>152/156</td><td>0.790</td><td>1.570</td><td>46</td><td>23.9%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-11</td><td>142/144</td><td>0.772</td><td>1.531</td><td>49</td><td>28.6%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-12</td><td>153/156</td><td>0.783</td><td>1.562</td><td>61</td><td>31.1%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-13</td><td>153/156</td><td>0.781</td><td>1.547</td><td>43</td><td>39.5%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-14</td><td>166/168</td><td>0.781</td><td>1.555</td><td>56</td><td>33.9%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-15</td><td>120/156</td><td>0.760</td><td>1.496</td><td>46</td><td>28.3%</td><td>mbrace K (official archive)</td><td>hist5y-v1</td></tr><tr><td>2026-11-16</td><td>96/120</td><td>0.786</td><td>1.562</td><td>35</td><td>40.0%</td><td>mbrace K (official archive)</td><td>hist5y-v1</td></tr><tr><td>2026-11-17</td><td>108/132</td><td>0.790</td><td>1.578</td><td>32</td><td>18.8%</td><td>mbrace K (official archive)</td><td>hist5y-v1</td></tr><tr><td>2026-11-18</td><td>108/132</td><td>0.744</td><td>1.474</td><td>23</td><td>47.8%</td><td>mbrace K (official archive)</td><td>hist5y-v1</td></tr><tr><td>2026-11-19</td><td>96/132</td><td>0.772</td><td>1.529</td><td>29</td><td>34.5%</td><td>mbrace K (official archive)</td><td>hist5y-v1</td></tr></table>
-</body></html>
+<tr><td>2026-11-01</td><td>167/168</td><td>0.789</td><td>1.580</td><td>69</td><td>30.4%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-02</td><td>149/156</td><td>0.783</td><td>1.551</td><td>57</td><td>35.1%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-03</td><td>130/132</td><td>0.772</td><td>1.533</td><td>54</td><td>33.3%</td><td>mirror (BoatraceCSV payouts)</td><td>featuresA-2026（旧モデル）</td></tr><tr><td>2026-11-04</td><td>137/144</td><td>0.786</td><td>1.558</td><td>51</td><td>21.6%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-05</td><td>142/144</td><td>0.752</td><td>1.490</td><td>51</td><td>41.2%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-06</td><td>141/156</td><td>0.758</td><td>1.500</td><td>46</td><td>39.1%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-07</td><td>127/132</td><td>0.770</td><td>1.528</td><td>25</td><td>44.0%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-08</td><td>100/100</td><td>0.791</td><td>1.596</td><td>29</td><td>34.5%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-09</td><td>129/132</td><td>0.786</td><td>1.574</td><td>48</td><td>33.3%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-10</td><td>152/156</td><td>0.790</td><td>1.570</td><td>46</td><td>23.9%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-11</td><td>142/144</td><td>0.772</td><td>1.531</td><td>49</td><td>28.6%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-12</td><td>153/156</td><td>0.783</td><td>1.562</td><td>61</td><td>31.1%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-13</td><td>153/156</td><td>0.781</td><td>1.547</td><td>43</td><td>39.5%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-14</td><td>166/168</td><td>0.781</td><td>1.555</td><td>56</td><td>33.9%</td><td>mirror (BoatraceCSV payouts)</td><td>hist5y-v1</td></tr><tr><td>2026-11-15</td><td>120/156</td><td>0.760</td><td>1.496</td><td>46</td><td>28.3%</td><td>mbrace K (official archive)</td><td>hist5y-v1</td></tr><tr><td>2026-11-16</td><td>96/120</td><td>0.786</td><td>1.562</td><td>35</td><td>40.0%</td><td>mbrace K (official archive)</td><td>hist5y-v1</td></tr><tr><td>2026-11-17</td><td>108/132</td><td>0.790</td><td>1.578</td><td>32</td><td>18.8%</td><td>mbrace K (official archive)</td><td>hist5y-v1</td></tr><tr><td>2026-11-18</td><td>108/132</td><td>0.744</td><td>1.474</td><td>23</td><td>47.8%</td><td>mbrace K (official archive)</td><td>hist5y-v1</td></tr><tr><td>2026-11-19</td><td>96/132</td><td>0.772</td><td>1.529</td><td>29</td><td>34.5%</td><td>mbrace K (official archive)</td><td>hist5y-v1</td></tr></table></div>
+</div></body></html>
